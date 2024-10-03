@@ -379,7 +379,7 @@ form .vertical-line {
   position: relative;
   left: -10px;
   bottom: 0;
-  z-index: 6;
+  z-index: 3;
 }
 
 form .third-vertical-line {
@@ -401,7 +401,7 @@ input[type="date"] {
   color: #616161;
 }
 
-.check-btn {
+.check-price-btn {
   background: rgba(4, 26, 64, 1);
   color: white;
   border: none;
@@ -411,7 +411,32 @@ input[type="date"] {
   margin-left: 20px;
 }
 
-.check-btn:hover {
+.check-price-btn:disabled {
+  background-color: #d9d9d9;
+}
+
+.check-price-btn:disabled:hover {
+  background-position: right center;
+  background-size: 200% auto;
+  -webkit-animation: pulse 2s infinite;
+  animation: pulse52 1.5s infinite;
+}
+
+@keyframes pulse52 {
+  0% {
+    box-shadow: 0 0 0 0 #d9d9d9;
+  }
+
+  70% {
+    box-shadow: 0 0 0 10px rgb(218 103 68 / 0%);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgb(218 103 68 / 0%);
+  }
+}
+
+.check-price-btn:hover {
   background-position: right center;
   background-size: 200% auto;
   -webkit-animation: pulse 2s infinite;
@@ -436,6 +461,89 @@ input[type="date"] {
   color: #fff;
   font-size: 20px;
   margin-left: 30px;
+}
+
+/* Dialog Box */
+.dialog-box-outer {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  background-color: #00000080;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(0.5);
+  transition: transform 0.5s ease, opacity 0.5s ease, visibility 0.5s;
+}
+
+.dialog-box-outer.active {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+}
+
+.dialog-box-inner {
+  background-color: #fff;
+  border-radius: 20px;
+  padding: 15px;
+  width: 700px;
+  height: 450px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+}
+
+.dialog-box-inner .align-self-end img {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+
+.dialog-box-inner .align-self-end img:hover {
+  cursor: pointer;
+}
+
+.dialog-box {
+  background-color: #111f3c;
+  padding: 25px 15px 15px 20px;
+  color: #fff;
+  width: 490px;
+  border-radius: 20px;
+}
+
+.dialog-box img {
+  position: relative;
+  left: 100px;
+}
+
+.dialog-box h3 {
+  font-size: 1.8rem;
+}
+
+.dialog-box button {
+  background-color: #fff;
+  color: #111f3c;
+  padding: 4px 10px;
+  border-radius: 10px;
+  border: none;
+  position: relative;
+  top: -30px;
+}
+
+.dialog-box button:hover {
+  background-position: right center;
+  background-size: 200% auto;
+  -webkit-animation: pulse 2s infinite;
+  animation: pulse51 1.5s infinite;
 }
 
 /* How it works Section */
@@ -1376,9 +1484,10 @@ input[type="date"] {
   .inputs {
     flex-direction: column;
   }
-  .check-btn {
+  .check-price-btn {
     align-self: center;
     margin-top: 20px;
+    margin-left: 0px;
   }
   form .vertical-line {
     display: none;
@@ -1486,6 +1595,28 @@ input[type="date"] {
   }
 }
 
+@media screen and (max-width: 745px) {
+  .dialog-box-inner {
+    width: 540px;
+    height: 400px;
+  }
+  .dialog-box {
+    width: 400px;
+  }
+  .dialog-box img {
+    left: 30px;
+  }
+  .dialog-box h3 {
+    font-size: 1.5rem;
+  }
+  .dialog-box p {
+    font-size: 0.9rem;
+  }
+  .dialog-box button {
+    font-size: 0.8rem;
+  }
+}
+
 @media screen and (max-width: 715px) {
   /* Hero Section */
   .hero-section {
@@ -1513,12 +1644,25 @@ input[type="date"] {
   .hero-section input[type="date"] {
     font-size: 0.85rem;
   }
-  .check-btn {
+  .check-price-btn {
     font-size: 1rem;
     padding: 10px 20px;
   }
   .fa-arrow-right {
     margin-left: 10px;
+  }
+}
+
+@media screen and (max-width: 585px) {
+  .dialog-box-inner {
+    width: 90%;
+  }
+  .dialog-box {
+    width: 350px;
+  }
+  .dialog-box img {
+    width: 200px;
+    left: 15px;
   }
 }
 
@@ -1627,6 +1771,30 @@ input[type="date"] {
   }
   .grid-item p {
     font-size: 0.85rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .dialog-box-inner {
+    width: 90%;
+    height: 300px;
+  }
+  .dialog-box {
+    width: 75%;
+    height: max-content;
+    padding-bottom: 40px;
+  }
+  .dialog-box h3 {
+    font-size: 1.4rem;
+  }
+  .dialog-box p br {
+    display: none;
+  }
+  .dialog-box button {
+    top: 15px;
+  }
+  .dialog-box img {
+    display: none;
   }
 }
 

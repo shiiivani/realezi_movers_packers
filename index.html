@@ -76,29 +76,31 @@
           <div class="dropdown position-relative d-flex align-items-center">
             <i class="fas fa-map-marker-alt location-icon"></i>
             <div class="dropdown-select d-flex align-items-center mx-2">
-              <span class="select-text">Select City</span>
+              <span class="select-text">Vadodra</span>
               <i class="fas fa-chevron-down"></i>
             </div>
-            <ul class="dropdown-list">
+            <!-- <ul class="dropdown-list">
               <li><a href="#">City 1</a></li>
               <li><a href="#">City 2</a></li>
               <li><a href="#">City 3</a></li>
               <li><a href="#">City 4</a></li>
-            </ul>
+            </ul> -->
           </div>
 
           <div class="inputs d-flex align-items-start justify-content-start mt-3">
             <div class="input-group-1 d-flex align-items-start justify-content-start">
               <div class="input-group">
                 <label>Pickup Location <img src="assets/svg/asterisk.svg" alt="*" class="asterisk-icon"></label>
-                <input type="text" name="pickupLocation" placeholder="Sending from" autocomplete="off" required>
+                <input type="text" name="pickupLocation" id="pickupLocation" placeholder="Sending from"
+                  autocomplete="off" required>
               </div>
 
               <div class="vertical-line"></div>
 
               <div class="input-group">
                 <label>Drop Location <img src="assets/svg/asterisk.svg" alt="*" class="asterisk-icon"></label>
-                <input type="text" name="dropLocation" placeholder="Sending to" autocomplete="off" required>
+                <input type="text" name="dropLocation" id="dropLocation" placeholder="Sending to" autocomplete="off"
+                  required>
               </div>
 
               <div class="vertical-line"></div>
@@ -107,7 +109,7 @@
             <div class="input-group-2 d-flex align-items-start justify-content-start">
               <div class="input-group">
                 <label>Phone Number <img src="assets/svg/asterisk.svg" alt="*" class="asterisk-icon"></label>
-                <input type="text" name="phoneNumber" placeholder="Enter contact number" maxlength="10"
+                <input type="text" name="phoneNumber" id="phoneNumber" placeholder="Enter contact number" maxlength="10"
                   autocomplete="off" required>
               </div>
 
@@ -115,16 +117,30 @@
 
               <div class="input-group">
                 <label>Shifting Date <img src="assets/svg/asterisk.svg" alt="*" class="asterisk-icon"></label>
-                <input type="date" name="date" autocomplete="off" required>
+                <input type="date" name="date" id="shiftingDate" autocomplete="off" required>
               </div>
             </div>
 
-            <button class="check-btn d-flex align-items-center" type="submit">
-              <p class="text-nowrap">Check Price</p><i class="fa-solid fa-arrow-right"></i>
+            <button id="checkPriceBtn" class="check-price-btn d-flex align-items-center" type="submit" disabled>
+              <p class="text-nowrap" type="submit">Check Price</p><i class="fa-solid fa-arrow-right"></i>
             </button>
           </div>
 
         </form>
+      </div>
+    </div>
+
+    <div class="dialog-box-outer">
+      <div class="dialog-box-inner">
+        <div class="align-self-end">
+          <img src="assets/images/cross-dark.png" alt="" width="30px" class="close-dialog">
+        </div>
+        <div class="dialog-box">
+          <h3>Price Quote Update</h3>
+          <p>Price quotes would be sent on your<br> number very soon</p>
+          <button>Resend quotes</button>
+          <img src="assets/images/movers.png" alt="" width="230px" class="moving-img">
+        </div>
       </div>
     </div>
 
@@ -420,11 +436,12 @@
       </div>
       <div class="upper-footer">
         <div class="columns d-flex align-items-start justify-content-between my-3">
-          <div>
+          <div style="margin-right: 10px;">
             <img src="assets/images/logo.png" width="150px" class="mb-3" />
             <h3>
-              Connecting You to Your<br />
-              Dream Property.
+              Click.<br>
+              Connect.<br>
+              Close.<br>
             </h3>
             <button class="white-btn">Try it yourself</button>
           </div>

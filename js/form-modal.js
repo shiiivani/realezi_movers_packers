@@ -137,16 +137,52 @@ document.addEventListener("DOMContentLoaded", function () {
       }, 3500);
     });
   });
+});
 
-  // closeIcons.forEach((closeIcon, index) => {
-  //   closeIcon.addEventListener("click", function () {
-  //     const confirmationModal = confirmationPopupModals[index];
-  // const video = confirmationModal.querySelector("video");
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.getElementById("price-check-form");
+  const checkPriceBtn = document.getElementById("checkPriceBtn");
+  const dialogBoxOuter = document.querySelector(".dialog-box-outer");
+  const closeDialogBtn = document.querySelector(".close-dialog");
 
-  // confirmationPopupModals[index].style.display = "none";
-  // modals[index].style.display = "block";
-  // confirmationModal.classList.remove("show");
-  // video.classList.remove("shrink");
-  // });
-  // });
+  const pickupLocation = document.getElementById("pickupLocation");
+  const dropLocation = document.getElementById("dropLocation");
+  const phoneNumber = document.getElementById("phoneNumber");
+  const shiftingDate = document.getElementById("shiftingDate");
+
+  function validateForm() {
+    if (
+      pickupLocation.value.trim() !== "" &&
+      dropLocation.value.trim() !== "" &&
+      phoneNumber.value.trim() !== "" &&
+      shiftingDate.value.trim() !== "" &&
+      phoneNumber.value.length === 10
+    ) {
+      checkPriceBtn.disabled = false;
+    } else {
+      checkPriceBtn.disabled = true;
+    }
+  }
+
+  pickupLocation.addEventListener("input", validateForm);
+  dropLocation.addEventListener("input", validateForm);
+  phoneNumber.addEventListener("input", validateForm);
+  shiftingDate.addEventListener("change", validateForm);
+
+  checkPriceBtn.addEventListener("click", function (e) {
+    e.preventDefault();
+    if (!checkPriceBtn.disabled) {
+      dialogBoxOuter.classList.add("active");
+    }
+  });
+
+  closeDialogBtn.addEventListener("click", function () {
+    dialogBoxOuter.classList.remove("active");
+  });
+
+  dialogBoxOuter.addEventListener("click", function (e) {
+    if (e.target === dialogBoxOuter) {
+      dialogBoxOuter.classList.remove("active");
+    }
+  });
 });
