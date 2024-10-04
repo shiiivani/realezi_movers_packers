@@ -703,7 +703,7 @@ input[type="date"] {
 /* Consultion Container */
 .consultation-container {
   position: absolute;
-  top: -85px;
+  top: -125px;
   left: 31%;
 }
 
@@ -717,6 +717,7 @@ input[type="date"] {
   padding: 10px 20px;
   border-radius: 20px;
   white-space: nowrap;
+  margin-top: 100px;
 }
 
 .consultation-container button:hover {
@@ -1031,7 +1032,7 @@ input[type="date"] {
 .confirmation-popup-modal.show h4,
 .confirmation-popup-modal.show p {
   opacity: 1;
-  transform: translateY(-60px);
+  transform: translateY(-40px);
 }
 
 .Realezi-arrow-loader.shrink {
@@ -1040,14 +1041,18 @@ input[type="date"] {
 }
 
 /* Footer */
+footer .container {
+  max-width: 1120px !important;
+}
+
 .footer {
   color: #ffffff;
   background-color: #111f3c;
   border-top-left-radius: 50px;
   border-top-right-radius: 50px;
   position: relative;
-  padding: 140px 10px 20px 10px;
-  margin-top: 15%;
+  padding: 100px 10px 20px 10px;
+  margin-top: 10%;
 }
 
 .footer .upper-footer ul {
@@ -1387,7 +1392,7 @@ input[type="date"] {
 
 @media screen and (max-width: 1500px) {
   .consultation-container {
-    left: 32%;
+    left: 29%;
   }
 }
 
@@ -1398,8 +1403,8 @@ input[type="date"] {
   }
   /* Consultation Container */
   .consultation-container {
-    left: 38%;
-    top: -58px;
+    top: -95px;
+    left: 25%;
   }
   /* Footer */
   .footer .columns div:first-child img {
@@ -1430,8 +1435,7 @@ input[type="date"] {
   }
   /* Consultation Container */
   .consultation-container {
-    left: 15%;
-    top: -58px;
+    left: 25%;
   }
   /* Footer */
   .footer .upper-footer ul {
@@ -1496,6 +1500,13 @@ input[type="date"] {
   /* How it works Section */
   .how-it-works-container {
     margin-top: 320px !important;
+  }
+}
+
+@media screen and (max-width: 867px) {
+  /* Consultation Container */
+  .consultation-container {
+    left: 32%;
   }
 }
 
@@ -1580,12 +1591,6 @@ input[type="date"] {
   .grid-item p {
     font-size: 0.9rem;
   }
-
-  /* Consultation Container */
-  .consultation-container {
-    top: -62px;
-  }
-
   /* Footer */
   .footer .lower-bottom {
     flex-direction: column;
@@ -1614,6 +1619,14 @@ input[type="date"] {
   }
   .dialog-box button {
     font-size: 0.8rem;
+  }
+}
+
+@media screen and (max-width: 730px) {
+  /* Consultation Container */
+  .consultation-container {
+    left: 5%;
+    top: -100px;
   }
 }
 
@@ -1677,8 +1690,7 @@ input[type="date"] {
 @media screen and (max-width: 560px) {
   /* Consultation Container */
   .consultation-container {
-    top: -69px;
-    left: 5%;
+    top: -110px;
   }
 
   /* Footer */
